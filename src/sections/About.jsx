@@ -159,7 +159,7 @@ export default function About() {
                 <div className="relative overflow-hidden rounded-[24px] aspect-[4/4.5] bg-neutral-900 border border-white/10">
                   <img
                     src={devPhoto}
-                    alt="Sanjai K - Software Engineer & Full Stack Developer"
+                    alt="Babu V - Software Engineer & Full Stack Developer"
                     className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
                   />
                   {/* Subtle inner shadow gradient */}
@@ -190,7 +190,7 @@ export default function About() {
 
             {/* Paragraph 1 */}
             <p className="text-base sm:text-lg lg:text-xl text-neutral-200 leading-relaxed font-sans font-normal mb-4">
-              Hi, I'm <strong className="font-extrabold text-white">SANJAI K</strong>, a passionate Software Engineer & Full Stack Developer pursuing B.Tech in Information Technology at Anna University (MPNMJ Engineering College) with an <span className="text-[#E3280C] font-bold font-mono">8.49 CGPA</span>.
+              Hi, I'm <strong className="font-extrabold text-white">BABU V</strong>, a passionate Software Engineer & Full Stack Developer pursuing B.Tech in Information Technology at Anna University (MPNMJ Engineering College) with an <span className="text-[#E3280C] font-bold font-mono">8.49 CGPA</span>.
             </p>
 
             {/* Paragraph 2 */}
