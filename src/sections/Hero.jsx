@@ -69,8 +69,8 @@ export default function Hero() {
           onPlay={() => setIsPlaying(true)}
           onPause={() => setIsPlaying(false)}
           style={{
-            WebkitMaskImage: 'radial-gradient(ellipse 75% 85% at 62% 78%, rgba(0,0,0,1) 35%, rgba(0,0,0,0.85) 55%, rgba(0,0,0,0.3) 75%, transparent 92%)',
-            maskImage: 'radial-gradient(ellipse 75% 85% at 62% 78%, rgba(0,0,0,1) 35%, rgba(0,0,0,0.85) 55%, rgba(0,0,0,0.3) 75%, transparent 92%)',
+            WebkitMaskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,0.6) 5%, rgba(0,0,0,1) 12%)',
+            maskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,0.6) 5%, rgba(0,0,0,1) 12%)',
           }}
           className="h-full max-h-[82vh] lg:max-h-[86vh] w-auto max-w-full object-contain object-bottom lg:object-right-bottom select-none translate-y-3 lg:translate-y-4"
         />
