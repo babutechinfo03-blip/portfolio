@@ -110,18 +110,16 @@ export default function Hero() {
               <span>V</span>
             </motion.h1>
 
-            {/* Subtitle: Full Stack Developer | Content Creator & Video Editor */}
+            {/* Subtitle: Software Engineer | Full Stack Developer */}
             <motion.h2
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.25, duration: 0.5 }}
               className="text-xl sm:text-2xl md:text-3xl font-extrabold tracking-tight text-white mb-4 leading-snug drop-shadow"
             >
-              <span>Full Stack Developer</span>{' '}
+              <span>Software Engineer</span>{' '}
               <span className="text-white/60 font-normal">|</span>{' '}
-              <span className="text-white">Content Creator</span>{' '}
-              <span className="text-neutral-950">&</span>{' '}
-              <span className="text-neutral-950">Video Editor</span>
+              <span className="text-white">Full Stack Developer</span>
             </motion.h2>
 
             {/* Description Paragraph */}
@@ -131,10 +129,10 @@ export default function Hero() {
               transition={{ delay: 0.35, duration: 0.5 }}
               className="text-sm sm:text-base text-white/95 leading-relaxed max-w-xl mb-6 font-normal drop-shadow"
             >
-              Full Stack Developer and Software Engineer specializing in building scalable,
-              high-performance web applications. Experienced in developing modern frontend and
-              backend solutions, with additional expertise in AI-powered applications, content
-              creation, and video editing.
+              Aspiring Software Engineer skilled in full-stack web development, Java programming,
+              the MERN Stack (MongoDB, Express.js, React.js, Node.js), and AI systems. Focused on
+              developing scalable, efficient, and reliable software with strong foundations in DSA,
+              OOP principles, and RESTful APIs.
             </motion.p>
 
             {/* Feature Bullets with Checkmarks */}
@@ -148,19 +146,19 @@ export default function Hero() {
                 <div className="w-5 h-5 rounded-full bg-neutral-950/40 flex items-center justify-center shrink-0">
                   <Check size={13} className="text-white stroke-[3]" />
                 </div>
-                <span>Full Stack Web Development with React.js, Node.js & MySQL</span>
+                <span>Full-Stack Web Development: React.js, Node.js, Express.js & MongoDB</span>
               </div>
               <div className="flex items-center gap-2.5 text-xs sm:text-sm text-white drop-shadow">
                 <div className="w-5 h-5 rounded-full bg-neutral-950/40 flex items-center justify-center shrink-0">
                   <Check size={13} className="text-white stroke-[3]" />
                 </div>
-                <span>Core Java, OOP Architectures & Robust REST APIs</span>
+                <span>Enterprise Java & Backend: Spring Boot 3, Spring Data JPA & MySQL</span>
               </div>
               <div className="flex items-center gap-2.5 text-xs sm:text-sm text-white drop-shadow">
                 <div className="w-5 h-5 rounded-full bg-neutral-950/40 flex items-center justify-center shrink-0">
                   <Check size={13} className="text-white stroke-[3]" />
                 </div>
-                <span>AI-Powered Solutions, Content Creation & Video Editing</span>
+                <span>AI Systems & ML Integration: LLMs, OpenAI SDK, Groq Llama & Random Forest</span>
               </div>
             </motion.div>
 
@@ -181,20 +179,22 @@ export default function Hero() {
                 <Send size={14} className="rotate-45" />
               </a>
 
-              {/* 2. FREE WEBSITE AUDIT */}
+              {/* 2. EXPLORE PROJECTS */}
               <a
                 href="#projects"
                 onClick={(e) => scrollToSection(e, 'projects')}
                 className="px-5 sm:px-6 py-3 rounded-full bg-black/40 hover:bg-black/60 text-white font-semibold text-xs sm:text-sm tracking-wider uppercase border border-white/30 hover:border-white/50 backdrop-blur-md hover:scale-105 active:scale-95 transition-all flex items-center gap-1.5 cursor-pointer font-mono shadow-md"
               >
-                <span>FREE WEBSITE AUDIT</span>
+                <span>EXPLORE PROJECTS</span>
                 <ArrowUpRight size={15} className="text-white/80" />
               </a>
 
               {/* 3. DOWNLOAD CV */}
               <a
-                href="#contact"
-                onClick={(e) => scrollToSection(e, 'contact')}
+                href="/Babu_V_Software_Engineer_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                download="Babu_V_Software_Engineer_Resume.pdf"
                 className="px-5 sm:px-6 py-3 rounded-full bg-black/40 hover:bg-black/60 text-white font-semibold text-xs sm:text-sm tracking-wider uppercase border border-white/30 hover:border-white/50 backdrop-blur-md hover:scale-105 active:scale-95 transition-all flex items-center gap-1.5 cursor-pointer font-mono shadow-md"
               >
                 <span>DOWNLOAD CV</span>

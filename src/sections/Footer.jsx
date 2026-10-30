@@ -26,7 +26,7 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-sm text-gray-400 max-w-sm">
-              Software Developer & Full Stack Specialist. Building clean, high-performance web applications and intelligent systems.
+              Software Engineer & Full Stack Developer. Developing scalable, efficient, and reliable software with modern web and AI systems.
             </p>
           </div>
 
@@ -34,7 +34,7 @@ export default function Footer() {
           <nav className="flex flex-wrap justify-center gap-6 text-sm font-medium">
             <a href="#home" className="hover:text-brand-accent transition-colors">Home</a>
             <a href="#about" className="hover:text-brand-accent transition-colors">About</a>
-            <a href="#skills" className="hover:text-brand-accent transition-colors">Skills</a>
+            <a href="#services" className="hover:text-brand-accent transition-colors">Services</a>
             <a href="#projects" className="hover:text-brand-accent transition-colors">Projects</a>
             <a href="#journey" className="hover:text-brand-accent transition-colors">Journey</a>
             <a href="#contact" className="hover:text-brand-accent transition-colors">Contact</a>

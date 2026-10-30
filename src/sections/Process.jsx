@@ -177,17 +177,25 @@ export default function Process() {
             <div className="w-full h-[1.5px] bg-gradient-to-r from-transparent via-[#E3280C] to-transparent shadow-[0_0_15px_#E3280C]" />
           </div>
 
-          <div className="relative z-10 flex items-center gap-3 px-6 py-2.5 rounded-full bg-neutral-950 border border-white/20 text-white shadow-2xl backdrop-blur-xl">
+          <a
+            href="#projects"
+            onClick={(e) => {
+              e.preventDefault();
+              const el = document.getElementById('projects');
+              if (el) el.scrollIntoView({ behavior: 'smooth' });
+            }}
+            className="relative z-10 flex items-center gap-3 px-6 py-2.5 rounded-full bg-neutral-950 border border-white/20 text-white shadow-2xl backdrop-blur-xl hover:border-[#E3280C] transition-all cursor-pointer group"
+          >
             <span className="flex h-2 w-2 relative">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#E3280C] opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-[#E3280C]"></span>
             </span>
-            <span className="text-xs font-mono font-black tracking-[0.25em] text-white uppercase">
-              TECHNICAL SKILLS // STACK
+            <span className="text-xs font-mono font-black tracking-[0.25em] text-white uppercase group-hover:text-[#E3280C] transition-colors">
+              FEATURED PROJECTS // WORK
             </span>
             <div className="w-px h-3.5 bg-white/20 mx-0.5" />
-            <ArrowDown size={14} className="text-neutral-400 animate-bounce" />
-          </div>
+            <ArrowDown size={14} className="text-neutral-400 group-hover:text-[#E3280C] group-hover:translate-y-0.5 transition-all" />
+          </a>
         </div>
       </div>
 

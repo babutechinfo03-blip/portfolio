@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  Camera, Sparkles, Trophy, MessageSquare, 
-  Users, Award, Maximize2, X, MapPin, ArrowDown, ChevronDown 
+  Sparkles, Trophy, MessageSquare, 
+  Users, Award, Maximize2, X, MapPin, ArrowDown
 } from 'lucide-react';
+import mpnmjPaperWinner from '../assets/mpnmj-paper-presentation-winner.jpg';
+import mpnmjHackathonWinner from '../assets/mpnmj-hackathon-winner.jpg';
 import award2 from '../assets/award2.jpg';
 import speech2 from '../assets/speech2.jpg';
 import award1 from '../assets/award1.jpg';
@@ -13,6 +15,24 @@ import konguAuditorium from '../assets/kongu-auditorium.jpg';
 
 // Real Moments & Milestones data from events and achievements
 const MOMENTS_ITEMS = [
+  {
+    id: 'mpnmj-paper-presentation-winner',
+    image: mpnmjPaperWinner,
+    title: 'Winner — Paper Presentation',
+    location: 'M.P.N.M.J. Engineering College, Erode',
+    tag: 'PAPER PRESENTATION WINNER',
+    icon: Trophy,
+    description: 'Secured 1st Prize Winner in the Intra-College Paper Presentation event at M.P.N.M.J. Engineering College, presenting feasibility and technical viability analysis for innovative software systems.'
+  },
+  {
+    id: 'mpnmj-hackathon-winner',
+    image: mpnmjHackathonWinner,
+    title: 'Winner — Intra-College Hackathon',
+    location: 'M.P.N.M.J. Engineering College, Erode',
+    tag: 'HACKATHON WINNER 1ST PLACE',
+    icon: Trophy,
+    description: 'Secured 1st Place Winner in the Intra-College Hackathon at M.P.N.M.J. Engineering College, collaborating on rapid software engineering, algorithmic problem solving, and live competitive coding.'
+  },
   {
     id: 'kongu-project-presentation',
     image: konguProject,

@@ -1,42 +1,11 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowUpRight, ArrowDown, ExternalLink, X } from 'lucide-react';
-import tenshiroMockup from '../assets/tenshiro-mockup.png';
-import agriconnectMockup from '../assets/agriconnect-mockup.jpg';
-
-const PROJECTS_LIST = [
-  {
-    id: 'career-ai',
-    number: '01',
-    category: 'AI & FULL STACK',
-    period: 'Apr – Jun 2025',
-    title: 'Tenshiro – AI Career Navigation Platform',
-    description: 'AI-powered recommendation engine providing personalized career roadmaps, course suggestions, and internship matching with real-time insights.',
-    image: tenshiroMockup,
-    badge: 'LIVE PROJECT',
-    liveUrl: 'https://github.com/babutechinfo03-blip',
-    githubUrl: 'https://github.com/babutechinfo03-blip',
-    techStack: ['React.js', 'Node.js', 'MySQL', 'AI APIs', 'Real-Time Sync'],
-    featured: true,
-  },
-  {
-    id: 'car-ai',
-    number: '02',
-    category: 'AGRITECH & FULL STACK',
-    period: 'Jan – Mar 2025',
-    title: 'AgriConnect – Demand-Guided Agri Intelligence',
-    description: 'Real-time APMC mandi intelligence, pre-harvest contract matching, and smart distress sale rescue for Indian agriculture connecting 12,000+ farmers.',
-    image: agriconnectMockup,
-    badge: 'LIVE PROJECT',
-    liveUrl: 'https://github.com/babutechinfo03-blip',
-    githubUrl: 'https://github.com/babutechinfo03-blip',
-    techStack: ['React.js', 'Node.js', 'MySQL', 'APMC Mandi APIs', 'Live Tracking', 'Contract Matching'],
-    featured: false,
-  },
-];
+import { ArrowUpRight, ArrowDown, X } from 'lucide-react';
+import { portfolioData } from '../data/portfolio';
 
 export default function Projects() {
   const [lightboxImage, setLightboxImage] = useState(null);
+  const projects = portfolioData.projects;
 
   const scrollToSection = (e, id) => {
     e.preventDefault();
@@ -55,7 +24,7 @@ export default function Projects() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="mb-12 sm:mb-16 text-left">
+        <div className="mb-12 sm:mb-16 text-left max-w-3xl">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-red-50 border border-red-200/60 text-xs font-mono font-bold text-[#E3280C] uppercase mb-3">
             <span className="w-2 h-2 rounded-full bg-[#E3280C] animate-pulse" />
             <span>FEATURED PROJECTS</span>
@@ -64,35 +33,38 @@ export default function Projects() {
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-outfit font-black tracking-tight text-neutral-950">
             Featured Software Projects<span className="text-[#E3280C]">.</span>
           </h2>
+          <p className="text-neutral-600 text-sm sm:text-base mt-3 leading-relaxed font-sans">
+            Full-stack platforms, machine learning systems, and responsive web applications engineered with production architecture, end-to-end APIs, and verified user impact.
+          </p>
         </div>
 
-        {/* 2-Column Projects Cards Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 mb-16">
-          {PROJECTS_LIST.map((proj) => (
+        {/* 3-Column Projects Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 lg:gap-8 mb-16">
+          {projects.map((proj) => (
             <motion.div
               key={proj.id}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-50px' }}
               transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-              className={`rounded-[32px] p-6 sm:p-8 bg-white flex flex-col justify-between transition-all duration-300 ${
+              className={`rounded-[32px] p-6 sm:p-7 bg-white flex flex-col justify-between transition-all duration-300 ${
                 proj.featured
-                  ? 'border-2 border-[#E3280C] shadow-2xl shadow-red-900/10'
-                  : 'border border-neutral-200/90 shadow-xl shadow-neutral-200/60 hover:border-neutral-300'
+                  ? 'border-2 border-[#E3280C] shadow-2xl shadow-red-900/10 hover:shadow-red-900/20'
+                  : 'border border-neutral-200/90 shadow-xl shadow-neutral-200/60 hover:border-[#E3280C]/50'
               }`}
             >
               <div>
                 {/* Header Row: Category, Date & Index Number */}
-                <div className="flex items-center justify-between mb-5">
-                  <div className="flex items-center gap-2">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex flex-col">
                     <span className="text-xs font-mono font-bold tracking-wider text-[#E3280C] uppercase">
                       {proj.category}
                     </span>
-                    <span className="text-xs font-mono text-neutral-400">
+                    <span className="text-[11px] font-mono text-neutral-400">
                       {proj.period}
                     </span>
                   </div>
-                  <span className={`font-outfit font-black text-4xl sm:text-5xl leading-none ${
+                  <span className={`font-outfit font-black text-3xl sm:text-4xl leading-none ${
                     proj.featured ? 'text-[#E3280C]' : 'text-neutral-300'
                   }`}>
                     {proj.number}
@@ -102,7 +74,7 @@ export default function Projects() {
                 {/* Project UI Mockup Image Container */}
                 <div
                   onClick={() => setLightboxImage(proj.image)}
-                  className="relative rounded-2xl overflow-hidden aspect-[16/9.5] mb-6 group cursor-pointer bg-neutral-950 border border-neutral-200 shadow-md"
+                  className="relative rounded-2xl overflow-hidden aspect-[16/10] mb-5 group cursor-pointer bg-neutral-950 border border-neutral-200 shadow-md"
                 >
                   <img
                     src={proj.image}
@@ -111,36 +83,36 @@ export default function Projects() {
                   />
 
                   {/* Top-Right Badge */}
-                  <div className="absolute top-3 right-3 px-3 py-1 rounded-full bg-black/80 backdrop-blur-md text-[10px] font-mono font-bold tracking-wider text-white uppercase border border-white/20 flex items-center gap-1.5">
+                  <div className="absolute top-2.5 right-2.5 px-2.5 py-1 rounded-full bg-black/80 backdrop-blur-md text-[10px] font-mono font-bold tracking-wider text-white uppercase border border-white/20 flex items-center gap-1.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
                     <span>{proj.badge}</span>
                   </div>
 
                   {/* Center Hover Overlay Button */}
                   <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-xs">
-                    <div className="px-5 py-2.5 rounded-full bg-[#E3280C] text-white font-mono font-bold text-xs uppercase tracking-wider shadow-2xl flex items-center gap-1.5 group-hover:scale-105 transition-transform">
-                      <span>VISIT LIVE WEBSITE</span>
+                    <div className="px-4 py-2 rounded-full bg-[#E3280C] text-white font-mono font-bold text-xs uppercase tracking-wider shadow-2xl flex items-center gap-1.5 group-hover:scale-105 transition-transform">
+                      <span>VIEW PREVIEW</span>
                       <ArrowUpRight size={14} />
                     </div>
                   </div>
                 </div>
 
                 {/* Title */}
-                <h3 className="text-2xl sm:text-3xl font-outfit font-bold tracking-tight text-neutral-950 mb-3 leading-snug">
+                <h3 className="text-xl sm:text-2xl font-outfit font-bold tracking-tight text-neutral-950 mb-2.5 leading-snug">
                   {proj.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-sm text-neutral-600 leading-relaxed mb-6 font-sans">
-                  {proj.description}
+                <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed mb-4 font-sans line-clamp-4">
+                  {proj.fullDescription || proj.shortDescription}
                 </p>
 
                 {/* Tech Stack Pills */}
-                <div className="flex flex-wrap gap-2 mb-8">
-                  {proj.techStack.map((tech, idx) => (
+                <div className="flex flex-wrap gap-1.5 mb-6">
+                  {proj.tags.map((tech, idx) => (
                     <span
                       key={idx}
-                      className="px-3 py-1 rounded-xl bg-neutral-100 border border-neutral-200/90 text-xs font-mono font-medium text-neutral-700"
+                      className="px-2.5 py-0.5 rounded-lg bg-neutral-100 border border-neutral-200/90 text-[11px] font-mono font-medium text-neutral-700"
                     >
                       {tech}
                     </span>
@@ -149,26 +121,26 @@ export default function Projects() {
               </div>
 
               {/* Bottom Action Buttons Row */}
-              <div className="flex items-center gap-3 pt-4 border-t border-neutral-100">
+              <div className="flex items-center gap-2.5 pt-4 border-t border-neutral-100">
                 <a
                   href={proj.liveUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 py-3 px-5 rounded-full bg-[#E3280C] hover:bg-[#FF333D] text-white font-mono font-bold text-xs uppercase tracking-wider shadow-lg shadow-red-900/20 flex items-center justify-center gap-2 transition-all hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
+                  className="flex-1 py-2.5 px-4 rounded-full bg-[#E3280C] hover:bg-[#FF333D] text-white font-mono font-bold text-xs uppercase tracking-wider shadow-lg shadow-red-900/20 flex items-center justify-center gap-1.5 transition-all hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
                 >
                   <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
-                  <span>LIVE PREVIEW</span>
-                  <ArrowUpRight size={14} />
+                  <span>DEMO</span>
+                  <ArrowUpRight size={13} />
                 </a>
 
                 <a
                   href={proj.githubUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="py-3 px-5 rounded-full bg-neutral-100 hover:bg-neutral-200 text-neutral-800 font-mono font-bold text-xs uppercase tracking-wider border border-neutral-200/90 flex items-center justify-center gap-1.5 transition-all hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
+                  className="py-2.5 px-4 rounded-full bg-neutral-100 hover:bg-neutral-200 text-neutral-800 font-mono font-bold text-xs uppercase tracking-wider border border-neutral-200/90 flex items-center justify-center gap-1.5 transition-all hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
                 >
                   <span>CODE</span>
-                  <ArrowUpRight size={14} />
+                  <ArrowUpRight size={13} />
                 </a>
               </div>
             </motion.div>
@@ -227,7 +199,7 @@ export default function Projects() {
               <div className="p-6 bg-neutral-900 flex items-center justify-between border-t border-white/10 text-white">
                 <div>
                   <h4 className="text-lg font-bold font-sans">Project Architecture Preview</h4>
-                  <p className="text-xs text-neutral-400 font-mono mt-0.5">High Resolution Interface Screenshots</p>
+                  <p className="text-xs text-neutral-400 font-mono mt-0.5">High Resolution Interface Screenshot</p>
                 </div>
                 <button
                   onClick={() => setLightboxImage(null)}

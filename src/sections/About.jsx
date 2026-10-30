@@ -4,10 +4,8 @@ import {
   Terminal,
   Coffee,
   Code2,
-  FileCode,
   Database,
   Zap,
-  Layout,
   Server,
   GitBranch,
   Cpu,
@@ -85,17 +83,18 @@ export default function About() {
   const isInView = useInView(containerRef, { once: true, margin: '-80px' });
 
   const skillsList = [
-    { name: 'VS Code & IDEs', icon: Terminal },
     { name: 'Java', icon: Coffee },
-    { name: 'React.js', icon: Code2 },
-    { name: 'JavaScript', icon: FileCode },
-    { name: 'MySQL', icon: Database },
-    { name: 'REST APIs', icon: Zap },
-    { name: 'HTML5 & CSS3', icon: Layout },
     { name: 'Spring Boot', icon: Layers },
+    { name: 'React.js', icon: Code2 },
     { name: 'Node.js', icon: Server },
-    { name: 'Git & GitHub', icon: GitBranch },
+    { name: 'Express.js', icon: Layers },
+    { name: 'MongoDB', icon: Database },
+    { name: 'MySQL', icon: Database },
     { name: 'Python', icon: Cpu },
+    { name: 'REST APIs', icon: Zap },
+    { name: 'Git & GitHub', icon: GitBranch },
+    { name: 'Docker', icon: Terminal },
+    { name: 'FastAPI', icon: Zap },
   ];
 
   return (
@@ -190,17 +189,17 @@ export default function About() {
 
             {/* Paragraph 1 */}
             <p className="text-base sm:text-lg lg:text-xl text-neutral-200 leading-relaxed font-sans font-normal mb-4">
-              Hi, I'm <strong className="font-extrabold text-white">BABU V</strong>, a passionate Software Engineer & Full Stack Developer pursuing B.Tech in Information Technology at Anna University (MPNMJ Engineering College) with an <span className="text-[#E3280C] font-bold font-mono">8.49 CGPA</span>.
+              Hi, I'm <strong className="font-extrabold text-white">BABU V</strong>, an aspiring Software Engineer & Full Stack Developer pursuing B.Tech in Information Technology at M.P.N.M.J. Engineering College, Erode (Anna University) with a <span className="text-[#E3280C] font-bold font-mono">7.8 / 10 CGPA</span>.
             </p>
 
             {/* Paragraph 2 */}
             <p className="text-sm sm:text-base text-neutral-300 leading-relaxed mb-4 font-sans">
-              I specialize in building <strong className="font-semibold text-white">scalable, responsive, and user-focused web applications</strong> using modern frontend and backend technologies. I enjoy turning ideas into reliable digital solutions with <strong className="font-semibold text-white">clean code</strong>, <strong className="font-semibold text-white">efficient APIs</strong>, and <strong className="font-semibold text-white">well-structured databases</strong>.
+              I specialize in building <strong className="font-semibold text-white">scalable, efficient, and reliable software</strong> with a strong foundation in <strong className="font-semibold text-white">Data Structures and Algorithms (DSA)</strong>, <strong className="font-semibold text-white">Object-Oriented Programming (OOP)</strong>, and <strong className="font-semibold text-white">RESTful APIs</strong>. I focus on high code quality, maintainability, robust testing, and performance optimization.
             </p>
 
             {/* Paragraph 3 */}
             <p className="text-sm sm:text-base text-neutral-400 leading-relaxed mb-6 font-sans">
-              My core expertise includes <strong className="font-semibold text-white">React.js</strong>, <strong className="font-semibold text-white">Node.js</strong>, <strong className="font-semibold text-white">Java</strong>, <strong className="font-semibold text-white">MySQL</strong>, <strong className="font-semibold text-white">REST APIs</strong>, and <strong className="font-semibold text-white">Git & GitHub</strong>, with hands-on experience in developing real-world full-stack applications. I also explore <strong className="font-semibold text-white">AI-powered solutions</strong>, <strong className="font-semibold text-white">content creation</strong>, and <strong className="font-semibold text-white">video editing</strong> as additional creative skills.
+              My technical expertise spans <strong className="font-semibold text-white">Java & Spring Boot</strong>, the <strong className="font-semibold text-white">MERN Stack</strong> (MongoDB, Express.js, React.js, Node.js), <strong className="font-semibold text-white">MySQL & PostgreSQL</strong>, and <strong className="font-semibold text-white">AI Systems Integration</strong> (OpenAI SDK, Groq Llama, Random Forest). Through 3 internships, I have engineered full-scale microservices with 115 REST endpoints, automated proctoring systems, and responsive full-stack AI platforms.
             </p>
 
             {/* Scrolling Skills Marquee (Right-to-Left) - Placed directly under text within column width */}

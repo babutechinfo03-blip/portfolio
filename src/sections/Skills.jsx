@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Award, CheckCircle2, BookOpen, Terminal, 
   Sparkles, Layers, ShieldCheck, Cpu, 
-  Code2, ExternalLink, Check, Zap, Globe
+  Code2, ExternalLink, Zap, Globe, Trophy
 } from 'lucide-react';
 import { portfolioData } from '../data/portfolio';
 
@@ -18,103 +18,102 @@ function StarSparkle({ className = '', style = {} }) {
 
 const SKILL_GROUPS = [
   {
-    title: 'Programming Languages',
-    badge: 'Core Competency',
+    title: 'Languages & Frontend',
+    badge: 'Core & Interface',
     isPrimary: true,
-    skills: ['HTML', 'CSS', 'JavaScript', 'Java', 'MySQL', 'APIs', 'Python'],
-    description: 'Core programming languages, backend frameworks, and relational databases used in production applications.'
+    skills: ['Java', 'JavaScript', 'Python', 'C', 'SQL', 'React.js', 'Framer Motion', 'Tailwind CSS', 'HTML5', 'CSS3'],
+    description: 'Object-oriented programming, modern component frameworks, interactive animations, and responsive frontend architectures.'
   },
   {
-    title: 'Tools & Technologies',
-    badge: 'Modern Workflow',
+    title: 'Backend & Enterprise',
+    badge: 'Server & APIs',
     isPrimary: false,
-    skills: ['Git', 'GitHub', 'VS Code', 'Eclipse IDE', 'IntelliJ IDEA', 'Antigravity'],
-    description: 'Modern developer workflows, version control systems, specialized IDEs, and agentic development tools.'
+    skills: ['Node.js', 'Express.js', 'Spring Boot 3', 'Spring Data JPA', 'RESTful APIs', 'Microservices', 'STOMP WebSocket'],
+    description: 'Enterprise backend engineering with Spring Boot & Node.js, JWT RBAC security, and scalable REST API architectures.'
   },
   {
-    title: 'Core Fundamentals',
-    badge: 'Computer Science',
+    title: 'Databases & Cloud Tools',
+    badge: 'Data & DevOps',
     isPrimary: false,
-    skills: ['OOP Concepts', 'Data Structures & Algorithms', 'REST APIs', 'DBMS', 'Web Architecture'],
-    description: 'Solid algorithmic foundations, object-oriented software engineering, and database design principles.'
+    skills: ['MySQL', 'MongoDB', 'PostgreSQL', 'Firebase', 'Git', 'GitHub', 'Postman', 'Docker Compose', 'CI/CD Pipelines', 'AWS Cloud'],
+    description: 'Relational & NoSQL database schema design, containerization with Docker Compose, cloud services, and developer workflows.'
+  },
+  {
+    title: 'Core CS & AI/ML Systems',
+    badge: 'Algorithms & AI',
+    isPrimary: false,
+    skills: ['Data Structures & Algorithms', 'OOP Concepts', 'DBMS', 'System Design', 'OpenAI SDK', 'Groq Llama 3.3 70B', 'Random Forest ML', 'Hugging Face'],
+    description: 'Strong foundations in DSA, OOP, and system design paired with practical LLM integrations and machine learning classifiers.'
   }
 ];
 
 const CERTIFICATE_DETAILS = [
   {
-    id: 'genai',
-    title: 'GenAI Professional',
-    issuer: 'Oracle',
-    badge: 'Verified Certification',
-    themeColor: 'from-[#E3280C] to-[#8E0C10]',
-    accentColor: '#E3280C',
-    icon: Sparkles,
-    serialNumber: 'ORA-GENAI-VERIFIED',
-    description: 'Generative AI foundational architectures, large language models (LLMs), prompt engineering, and enterprise AI deployment strategies.',
-    skills: ['Generative AI', 'LLM Architectures', 'Prompt Engineering', 'Enterprise AI']
+    id: 'hackerrank-se',
+    title: 'Software Engineer',
+    issuer: 'HackerRank',
+    badge: 'Verified Skill',
+    credentialUrl: 'https://www.hackerrank.com/certificates/d71ba9aaba99',
+    serialNumber: 'd71ba9aaba99',
+    icon: Code2,
+    description: 'Demonstrated verified proficiency in Software Engineering principles, problem solving, data structures, algorithms, and SQL database querying.',
+    skills: ['Software Engineering', 'Data Structures', 'Algorithms', 'SQL Queries']
   },
   {
-    id: 'cybersec',
+    id: 'naan-mudhalvan-cybersec',
     title: 'Cyber Security',
     issuer: 'Naan Mudhalvan',
-    badge: 'State Certified',
-    themeColor: 'from-emerald-600 to-teal-800',
-    accentColor: '#10B981',
-    icon: ShieldCheck,
+    badge: 'State Govt Certified',
+    credentialUrl: 'https://drive.google.com/file/d/1LGZqi4d1tAxLS9K31jIKtRExZ_NVhQLx/view?usp=drive_link',
     serialNumber: 'NM-CYBERSEC-VERIFIED',
+    icon: ShieldCheck,
     description: 'Network security fundamentals, threat analysis, cryptography, application vulnerability testing, and defensive system protocols.',
-    skills: ['Threat Analysis', 'Network Security', 'Cryptography', 'Vulnerability Audits']
+    skills: ['Network Security', 'Threat Analysis', 'Cryptography', 'Vulnerability Audits']
   },
   {
-    id: 'python',
+    id: 'novitech-python',
     title: 'Python Programming',
     issuer: 'Novitech',
     badge: 'Industry Certified',
-    themeColor: 'from-blue-600 to-indigo-900',
-    accentColor: '#3B82F6',
-    icon: Code2,
+    credentialUrl: 'https://docs.google.com/document/d/14NH9PoaY6Fu0494epV03PZLWWYKQ3WF3/edit?usp=drive_link&ouid=101537972255391387869',
     serialNumber: 'NOVI-PY-VERIFIED',
+    icon: Terminal,
     description: 'Core Python development, data manipulation, object-oriented programming principles, and backend automation scripting.',
     skills: ['Python OOP', 'Data Structures', 'Automation Scripting', 'Backend Logic']
+  }
+];
+
+const HACKATHON_ACHIEVEMENTS = [
+  {
+    title: 'Finalist — Protothon Hackathon',
+    subtitle: 'Prince Dr. K. Vasudevan College of Engg, Chennai',
+    badge: 'Finalist Honor',
+    description: 'Selected as top finalist in the competitive 24-hour state-level hackathon for developing rapid software prototypes with scalable system architecture.'
   },
   {
-    id: 'java',
-    title: 'Java Developer',
-    issuer: 'Codec Technologies',
-    badge: 'Industry Certified',
-    themeColor: 'from-orange-600 to-red-900',
-    accentColor: '#EA580C',
-    icon: Terminal,
-    serialNumber: 'CODEC-JAVA-VERIFIED',
-    description: 'Java application engineering, OOP principles, data structures, algorithms, and API database integration.',
-    skills: ['Java OOP', 'Data Structures', 'REST APIs', 'MySQL Integration']
+    title: 'Winner — Intra-College Hackathon',
+    subtitle: 'M.P.N.M.J. Engineering College',
+    badge: '1st Place Winner',
+    description: 'Clinched 1st place for architecting an end-to-end full-stack software solution with algorithmic optimization, responsive UI, and robust backend APIs.'
   },
   {
-    id: 'fullstack',
-    title: 'Full Stack Web Development',
-    issuer: 'Strydo Technologies',
-    badge: 'Industry Certified',
-    themeColor: 'from-purple-600 to-indigo-950',
-    accentColor: '#9333EA',
-    icon: Globe,
-    serialNumber: 'STRYDO-FSW-VERIFIED',
-    description: 'Full-stack web application development across frontend, backend, and database layers with reusable UI components.',
-    skills: ['Full Stack Architecture', 'React.js', 'Node.js', 'Database Integration']
+    title: 'Runner-Up — TECHNOVANZA-2K26',
+    subtitle: 'Shree Venkateshwara Hi-Tech Engg College',
+    badge: 'State Merit Award',
+    description: 'Honored as Runner-Up during the state-level technical symposium for demonstrating innovative software architecture and live project execution.'
   }
 ];
 
 const COURSEWORK_TILES = [
   { title: 'Full Stack Web Development', icon: Globe, highlight: 'React, Node, Express, REST APIs' },
-  { title: 'Data Structures & Algorithms', icon: Cpu, highlight: 'Trees, Graphs, Sorting, Dynamic Programming' },
-  { title: 'Object Oriented Programming', icon: Terminal, highlight: 'Java OOP, Polymorphism, Encapsulation' },
-  { title: 'Cloud Computing', icon: Layers, highlight: 'Cloud Infrastructure, Virtualization, Services' },
-  { title: 'Database Management Systems', icon: Zap, highlight: 'MySQL, Relational Schemas, Indexing' },
-  { title: 'Web Essentials', icon: BookOpen, highlight: 'Semantic HTML, CSS Layouts, Web Architecture' }
+  { title: 'Data Structures & Algorithms', icon: Cpu, highlight: 'Trees, Graphs, Sorting, Complexity' },
+  { title: 'Object-Oriented Programming', icon: Terminal, highlight: 'Java 21, Polymorphism, Encapsulation' },
+  { title: 'Database Management Systems', icon: Zap, highlight: 'MySQL, MongoDB, Normalization' },
+  { title: 'System Design Fundamentals', icon: Layers, highlight: 'Microservices, Scalability, Caching' },
+  { title: 'Software Development Life Cycle', icon: BookOpen, highlight: 'SDLC, Agile, Testing, CI/CD' }
 ];
 
 export default function Skills() {
-  const [selectedCert, setSelectedCert] = useState(0);
-
   return (
     <section id="skills" className="py-24 sm:py-32 relative bg-[#F9FAFB] text-neutral-900 overflow-hidden border-t border-neutral-200">
       
@@ -138,7 +137,7 @@ export default function Skills() {
           </h2>
 
           <p className="text-base sm:text-lg text-neutral-600 leading-relaxed font-sans">
-            A focused breakdown of programming languages, frameworks, databases, and development tools directly from my academic and internship journey.
+            A comprehensive breakdown of programming languages, backend frameworks, relational & NoSQL databases, and developer workflows directly aligned with production engineering standards.
           </p>
         </div>
 
@@ -256,7 +255,7 @@ export default function Skills() {
               </h3>
 
               <p className="text-base text-neutral-600 mt-3 font-sans">
-                Industry certifications in Artificial Intelligence, Cybersecurity, and Python Programming verified from top institutions.
+                Official certifications in Software Engineering, Cybersecurity, and Python Programming verified through institutional records.
               </p>
             </div>
 
@@ -324,16 +323,23 @@ export default function Skills() {
                       </div>
                     </div>
 
-                    {/* Official Stamp & Serial Number Footer */}
+                    {/* Verification Link Button & Credential ID Footer */}
                     <div className="pt-5 border-t border-neutral-100 flex items-center justify-between gap-2 text-xs font-mono">
-                      <div>
-                        <span className="text-neutral-400 block text-[10px] uppercase">Credential ID</span>
-                        <span className="font-bold text-neutral-800">{cert.serialNumber}</span>
+                      <div className="flex flex-col">
+                        <span className="text-neutral-400 block text-[10px] uppercase">Certificate ID</span>
+                        <span className="font-bold text-neutral-800 line-clamp-1">{cert.serialNumber}</span>
                       </div>
 
-                      <div className="w-10 h-10 rounded-2xl bg-neutral-100 group-hover:bg-[#E3280C] group-hover:text-white transition-colors flex items-center justify-center text-neutral-700 shadow-sm">
-                        <Icon size={18} />
-                      </div>
+                      <a
+                        href={cert.credentialUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="px-3.5 py-2 rounded-xl bg-neutral-100 hover:bg-[#E3280C] hover:text-white transition-all text-neutral-800 font-mono font-bold text-xs flex items-center gap-1.5 cursor-pointer shadow-sm"
+                        title="View Official Certificate Verification"
+                      >
+                        <span>Verify</span>
+                        <ExternalLink size={13} />
+                      </a>
                     </div>
 
                   </div>
@@ -342,7 +348,47 @@ export default function Skills() {
             })}
           </div>
 
-          {/* 3. UNDERGRADUATE COURSEWORK & INTERESTS BENTO */}
+          {/* 3. ACHIEVEMENTS & HACKATHONS */}
+          <div className="mb-20">
+            <div className="mb-8">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-50 border border-red-200 text-xs font-mono font-bold text-[#E3280C] uppercase mb-2">
+                <Trophy size={14} />
+                <span>COMPETITIVE RECOGNITION</span>
+              </div>
+              <h4 className="text-2xl sm:text-3xl font-sans font-black text-neutral-950">
+                Achievements & Hackathons
+              </h4>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {HACKATHON_ACHIEVEMENTS.map((item, hIdx) => (
+                <div
+                  key={hIdx}
+                  className="p-6 rounded-3xl bg-white border-2 border-neutral-200 hover:border-[#E3280C] transition-all shadow-sm hover:shadow-lg flex flex-col justify-between"
+                >
+                  <div>
+                    <div className="flex items-center justify-between mb-3">
+                      <span className="px-3 py-0.5 rounded-full bg-red-100 text-[#E3280C] font-mono text-xs font-bold">
+                        {item.badge}
+                      </span>
+                      <Trophy size={16} className="text-[#E3280C]" />
+                    </div>
+                    <h5 className="font-sans font-black text-lg text-neutral-950 mb-1">
+                      {item.title}
+                    </h5>
+                    <div className="text-xs text-neutral-500 font-mono mb-3">
+                      {item.subtitle}
+                    </div>
+                    <p className="text-xs text-neutral-600 leading-relaxed font-sans">
+                      {item.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* 4. UNDERGRADUATE COURSEWORK & INTERESTS BENTO */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
             
             {/* Left: Undergraduate Coursework Matrix (6 Interactive Bento Tiles) */}
@@ -425,7 +471,7 @@ export default function Skills() {
               </div>
 
               <div className="pt-2 text-xs font-mono text-neutral-400 leading-relaxed">
-                Combining technical precision with creative digital craftsmanship.
+                Combining rigorous software engineering with continuous learning and innovation.
               </div>
 
             </div>
